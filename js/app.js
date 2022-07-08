@@ -258,6 +258,8 @@ function attachEvents() {
             console.log("owner",owner)
             console.log("name",name)
             console.log("tokenURI",tokenURI)
+            //`tokenId${res[1]}`
+            showMsg(`tokenId${res[1]}`, `tokenId${res[1]}`)
         } catch (error) {
             showMsg("错误", "failed")
         }
