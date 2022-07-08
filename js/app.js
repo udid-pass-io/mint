@@ -243,6 +243,7 @@ function attachEvents() {
             //     showMsg("添加白名单成功", "Description Adding a whitelist succeeded")
             // }MintByOperator setCardDefaultNum
             await window.app.mt.methods.MintPassCardOne().send({from: window.app.current_account})
+            showMsg("成功", "success")
             // await window.app.mt.methods.setCardDefaultNum(10).send({from: "0xd07bdb622a7E9d519a17c4C097Bc479012761880"})
             // await window.app.mt.methods.MintByOperator("0xd07bdb622a7E9d519a17c4C097Bc479012761880",5).send({from: "0xd07bdb622a7E9d519a17c4C097Bc479012761880"})
             let zc = await window.app.mt.methods.balanceOf(window.app.current_account).call()
@@ -250,16 +251,16 @@ function attachEvents() {
             let type = await window.app.mt.methods.PassCardType(res[1]).call()
             let owner = await window.app.mt.methods.ownerOf(res[1]).call()
             let name = await window.app.mt.methods.name().call()
-            let tokenURI = await window.app.mt.methods.tokenURI(res[1]).call()
+            //let tokenURI = await window.app.mt.methods.tokenURI(res[1]).call()
             console.log("zc",zc)
             console.log("isok",res[0])
             console.log("token",res[1])
             console.log("type",type)
             console.log("owner",owner)
             console.log("name",name)
-            console.log("tokenURI",tokenURI)
+            //console.log("tokenURI",tokenURI)
             //`tokenId${res[1]}`
-            showMsg(`tokenId：${res[1]}`, `tokenId：${res[1]}`)
+            //showMsg(`tokenId：${res[1]}`, `tokenId：${res[1]}`)
         } catch (error) {
             showMsg("错误", "failed")
         }
